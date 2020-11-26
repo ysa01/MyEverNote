@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Hesap Aktifleştirildi.";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kayıt Sayfası</title>
+    <!--Made with love by Mutiullah Samim -->
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <style class="text/css">
+        .validation-summary-errors {
+            border: 2px dotted #a94442;
+            background-color: #d76663;
+            border-radius: 10px;
+            border-bottom: 2px;
+        }
+
+        .activemail {
+            border: 2px dotted #ff6a00;
+            background-color: #FFC312;
+            border-radius: 8px;
+            border-bottom: 2px;
+            padding: 10px;
+        }
+
+        .validation-summary-errors ul {
+            list-style-type: square;
+            margin-left: 1rem;
+            padding: 10px;
+            color: #fff
+        }
+    </style>
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h2 class="text-center">Yönlendiriliyorsunuz...</h2>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span><i class="fab fa-facebook-square"></i></span>
+                        <span><i class="fab fa-google-plus-square"></i></span>
+                        <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <h2 class="text-center"><i class="far fa-check-circle fa-10x" style="color:#4cff00"></i>  Hesap Aktifleştirildi...</h2>
+                    <p class="text-justify activemail ">
+                        Hesap Aktifleştirildi , Artık dilediğiniz gibi Not paylaşabilir ve istediğiniz notu beğeniğ yorum yazabilirsiniz 
+                    </p>
+                </div>
+                <div class="card-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("footer").hide();
+        setTimeout(function () {
+            window.location = "/Home/Index";
+        }, 8000)
+    });
+</script>

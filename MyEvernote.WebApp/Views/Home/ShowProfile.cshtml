@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "ShowProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using MyEvernote.Entities
+@model EvernoteUser
+
+
+<div class="container">
+
+    <div class="row">
+        <h2>@ViewBag.Title</h2>
+        <hr />
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-2">
+            <img src="~/images/@Model.ProfileImageFilename" class="img-circle" width="128" height="128" />
+        </div>
+
+        <div class="col-md-8">
+            <h3>@(Model.Name + " " + Model.SurName)</h3>
+            <br />
+            <h5><b>@Html.DisplayNameFor(model => model.UserName) : </b>@Model.UserName</h5>
+            <h5><b>@Html.DisplayNameFor(model => model.Email) : </b>@Model.Email</h5>
+            <br />
+            <h5><a href="#">More... </a></h5>
+        </div>
+        <div class="col-md-2  ">
+            <div class="row">
+                <div class="btn-group">
+                        <a class="btn btn-outline-dark " href="@Url.Action("EditProfile")">Düzenle</a>
+                        <a href="/Home/DeleteProfile" class="btn btn-outline-dark " onclick="return confirm('Hesabınızı silmek istediğinize emin misiniz?');">Profili Sil</a>
+
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+
+

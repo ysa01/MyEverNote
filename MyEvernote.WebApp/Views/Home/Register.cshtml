@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using MyEvernote.Entities.ValueObjects
+@model RegisterViewModel
+
+
+<link href="~/Content/login-register.css" rel="stylesheet" />
+<!------ Include the above in your HEAD tag ---------->
+<link href="~/Content/validation-summary.css" rel="stylesheet" />
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kayıt Sayfası</title>
+    <!--Made with love by Mutiullah Samim -->
+    <!--Bootsrap 4 CDN-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!--Custom styles-->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+   
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Kayıt Formu</h3>
+                    <div class="d-flex justify-content-end social_icon">
+                        <span><i class="fab fa-facebook-square"></i></span>
+                        <span><i class="fab fa-google-plus-square"></i></span>
+                        <span><i class="fab fa-twitter-square"></i></span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    @Html.ValidationSummary(false)
+                
+                    @using (Html.BeginForm())
+                    {
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            </div>
+
+                            @Html.TextBoxFor(x => x.Username, new { @class = "form-control", placeholder = "Kullanıcı Adınız" })
+
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-at"></i></span>
+                            </div>
+                            @Html.TextBoxFor(x => x.EMail, new { @class = "form-control", placeholder = "E-Posta Adresiniz" })
+
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            @Html.TextBoxFor(x => x.Password, new { @class = "form-control", placeholder = "Şifreniz", Type = "Password" })
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            </div>
+                            @Html.TextBoxFor(x => x.RePassword, new { @class = "form-control", placeholder = "Şifreniz (Tekrar)", Type = "Password" })
+
+                        </div>
+                        @*<div class="row align-items-center remember">
+                <input type="checkbox">BeniHatırla
+            </div>*@
+                        <div class="form-group">
+                            <input type="submit" value="Kayıt Ol" class="btn float-right login_btn">
+                        </div>
+
+                    }
+
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        Zaten Üye misiniz ?<a href="#">Giriş Yap</a>
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="#">Parolanızı mı unuttunuz?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
